@@ -1,0 +1,20 @@
+services:
+  gateway:
+    image: dairoot/grok-gateway:latest
+    ports:
+      - "50005:8080"
+    restart: always
+    volumes:
+      - ./.cache_data:/app/.cache_data
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+  watchtower:
+    image: containrrr/watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --cleanup --interval 3600 --label-enable
+
+volumes:
+  grok_gateway_db:
