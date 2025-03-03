@@ -78,13 +78,13 @@ POST: /v1/chat/completions
 
 - 请求参数:
 
-| 参数名            | 类型    | 是否必须 | 描述                            |
-| ----------------- | ------- | -------- | ------------------------------- |
-| model             | string  | 是       | 模型名称 `grok-latest` `grok-3` |
-| messages          | array   | 是       | 消息内容                        |
-| stream            | boolean | 否       | 是否开启流式返回                |
-| conversation_id   | string  | 否       | 会话 ID，用于临时聊天           |
-| parent_message_id | string  | 否       | 父消息 ID，用于临时聊天         |
+| 参数名            | 类型    | 是否必须 | 描述                                                               |
+| ----------------- | ------- | -------- | ------------------------------------------------------------------ |
+| model             | string  | 是       | 模型名称 <br> `grok-2` `grok-3` `grok-3-think` `grok-3-deepsearch` |
+| messages          | array   | 是       | 消息内容                                                           |
+| stream            | boolean | 否       | 是否开启流式返回                                                   |
+| conversation_id   | string  | 否       | 会话 ID，用于临时聊天                                              |
+| parent_message_id | string  | 否       | 父消息 ID，用于临时聊天                                            |
 
 聊天接口请求示例：
 
@@ -97,7 +97,7 @@ curl --location "${yourUrl}/v1/chat/completions" \
 --header 'Content-Type: application/json' \
 --header "Authorization: Bearer ${ssoToken}" \
 --data '{
-     "model": "grok-latest",
+     "model": "grok-2",
      "messages": [{"role": "user", "content": "你好呀!"}],
      "stream": true,
      "conversation_id": null,
