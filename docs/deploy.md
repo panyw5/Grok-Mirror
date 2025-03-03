@@ -14,6 +14,8 @@ cd /home/ && git clone https://github.com/dairoot/Grok-Mirror.git
 
 cd Grok-Mirror/
 
+cp .env.example .env
+
 # 启动
 ./deploy.sh
 ```

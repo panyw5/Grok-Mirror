@@ -8,6 +8,9 @@ services:
       - ./.cache_data:/app/.cache_data
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+    env_file:
+      - .env
+      
 
   watchtower:
     image: containrrr/watchtower
@@ -16,5 +19,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --cleanup --interval 3600 --label-enable
 
-volumes:
-  grok_gateway_db:
+
