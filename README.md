@@ -28,7 +28,7 @@ dairoot/grok-gateway:latest
 
 访问 `http://127.0.0.1:50005` 或访问 `http://外网ip:50005`
 
-配置域名，请点击查看[完整部署流程](./docs/deploy.md)
+配置域名，请点击查看 [完整部署流程](./docs/deploy.md)
 
 ## 环境变量
 
