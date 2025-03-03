@@ -56,7 +56,7 @@ dairoot/grok-gateway:latest
   <tr align="left">
     <td><code>API_HATD</code></td>
     <td><code>Boolean</code></td>
-    <td><code>false</code></td>
+    <td><code>true</code></td>
     <td>API 开启临时聊天（不保存聊天记录）</td>
   </tr>
    <tr align="left">
