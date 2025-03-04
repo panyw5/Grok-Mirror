@@ -41,7 +41,13 @@ dairoot/grok-gateway:latest
     <th>描述</th>
   </tr>
   <tr align="left">
-    <td rowspan="3">API 相关</td>
+    <td rowspan="4">API 相关</td>
+    <td><code>AUTHORIZATION</code></td>
+    <td><code>String</code></td>
+    <td><code>None</code></td>
+    <td>用于轮询 多账号 SsoToken 列表 的授权码</td>
+  </tr>
+  <tr align="left">
     <td><code>ENABLE_MIRROR_API</code></td>
     <td><code>Boolean</code></td>
     <td><code>true</code></td>
@@ -74,7 +80,7 @@ POST: /v1/chat/completions
 - 请求头:
   | 字段 | 类型 | 默认值 | 必填 | 描述 |
   | --- | --- | --- |--- |--- |
-  | `Authorization` | `string` | `None` | `是` |`Bearer ${`[Sso Token](./docs/get-sso-token.jpg)`}` |
+  | `Authorization` | `string` | `None` | `是` | `Bearer ${ Authorization }` 或 <br> `Bearer ${`[Sso Token](./docs/get-sso-token.jpg)`}` <br><br> 推荐使用环境变量中的 AUTHORIZATION，自动轮询token |
 
 - 请求参数:
 
@@ -89,13 +95,13 @@ POST: /v1/chat/completions
 聊天接口请求示例：
 
 ```bash
-export ssoToken=XXXXX
+export Authorization=GrokToken 或者 环境变量的Authorization
 export yourUrl=http://127.0.0.1:50005
 
 
 curl --location "${yourUrl}/v1/chat/completions" \
 --header 'Content-Type: application/json' \
---header "Authorization: Bearer ${ssoToken}" \
+--header "Authorization: Bearer ${Authorization}" \
 --data '{
      "model": "grok-2",
      "messages": [{"role": "user", "content": "你好呀!"}],
