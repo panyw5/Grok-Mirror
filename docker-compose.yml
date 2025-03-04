@@ -11,6 +11,13 @@ services:
     env_file:
       - .env
       
+  cf5s:
+    image: dairoot/cf5s:latest
+    depends_on:
+      - gateway
+    environment:
+      - CHATGPT_GATEWAY_URL=http://gateway:8080
+
 
   watchtower:
     image: containrrr/watchtower
