@@ -41,7 +41,12 @@ dairoot/grok-gateway:latest
     <th>描述</th>
   </tr>
   <tr align="left">
-    <td rowspan="4">API 相关</td>
+    <td rowspan="5">API 相关</td>
+    <td><code>ADMIN_PASSWORD</code></td>
+    <td><code>String</code></td>
+    <td><code>None</code></td>
+    <td>管理后台访问密码</td>
+  <tr align="left">
     <td><code>AUTHORIZATION</code></td>
     <td><code>String</code></td>
     <td><code>None</code></td>
@@ -80,7 +85,7 @@ POST: /v1/chat/completions
 - 请求头:
   | 字段 | 类型 | 默认值 | 必填 | 描述 |
   | --- | --- | --- |--- |--- |
-  | `Authorization` | `string` | `None` | `是` | `Bearer ${ AUTHORIZATION }` 或 <br> `Bearer ${`[Sso Token](./docs/get-sso-token.jpg)`}` <br><br> 推荐使用环境变量中的 AUTHORIZATION，自动轮询token |
+  | `Authorization` | `string` | `None` | `是` | `Bearer ${ AUTHORIZATION }` 或 <br> `Bearer ${`[Sso Token](./docs/get-sso-token.jpg)`}` <br><br> 推荐使用环境变量中的 AUTHORIZATION，自动轮询 token |
 
 - 请求参数:
 
