@@ -83,9 +83,10 @@ dairoot/grok-gateway:latest
 POST: /v1/chat/completions
 
 - 请求头:
-  | 字段 | 类型 | 默认值 | 必填 | 描述 |
-  | --- | --- | --- |--- |--- |
-  | `Authorization` | `string` | `None` | `是` | `Bearer ${ AUTHORIZATION }` 或 <br> `Bearer ${`[Sso Token](./docs/get-sso-token.jpg)`}` <br><br> 推荐使用环境变量中的 AUTHORIZATION，自动轮询 token |
+  
+| 字段 | 类型 | 默认值 | 必填 | 描述 |
+| --- | --- | --- |--- |--- |
+| `Authorization` | `string` | `None` | `是` | `Bearer ${ AUTHORIZATION }` 或 <br> `Bearer ${`[Sso Token](./docs/get-sso-token.jpg)`}` <br><br> 推荐使用环境变量中的 AUTHORIZATION，自动轮询token |
 
 - 请求参数:
 
@@ -115,6 +116,9 @@ curl --location "${yourUrl}/v1/chat/completions" \
      "parent_message_id": null
    }'
 ```
+
+更多 API 请点击查看：[高阶玩法](./docs/grok-gateway.md)
+
 
 ## 加入群聊
 
