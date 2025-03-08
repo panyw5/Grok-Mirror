@@ -50,7 +50,7 @@ dairoot/grok-gateway:latest
     <td><code>AUTHORIZATION</code></td>
     <td><code>String</code></td>
     <td><code>None</code></td>
-    <td>用于轮询 多账号 SsoToken 列表 的授权码</td>
+    <td>用于轮询 多账号 SsoToken 列表，的API访问密钥</td>
   </tr>
   <tr align="left">
     <td><code>ENABLE_MIRROR_API</code></td>
