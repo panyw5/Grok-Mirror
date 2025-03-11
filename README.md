@@ -46,6 +46,7 @@ dairoot/grok-gateway:latest
     <td><code>String</code></td>
     <td><code>None</code></td>
     <td>管理后台访问密码</td>
+  </tr>
   <tr align="left">
     <td><code>AUTHORIZATION</code></td>
     <td><code>String</code></td>
@@ -71,11 +72,19 @@ dairoot/grok-gateway:latest
     <td>API 开启临时聊天（不保存聊天记录）</td>
   </tr>
    <tr align="left">
-    <td rowspan="2">系统变量</td>
+    <td rowspan="3">系统变量</td>
     <td><code>PROXY_URL_POOL</code></td>
     <td><code>String</code></td>
     <td><code>None</code></td>
     <td>代理池链接，多个代理用逗号分隔<br><code>http://username:password@ip:port,</code><br/><code>socks5://username:password@ip:port,</code><br/><code>socks5h://username:password@ip:port</code></td>
+   </tr>
+   <tr align="left">
+    <td><code>HOST</code></td>
+    <td><code>String</code></td>
+    <td><code>None</code></td>
+    <td>设置服务的域名地址，用于api 图片显示 <br><code>https://example.com</code></td>
+  </tr>
+  
 </table>
 
 ## 聊天 API 接口
