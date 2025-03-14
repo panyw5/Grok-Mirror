@@ -72,7 +72,7 @@ dairoot/grok-gateway:latest
     <td>API 开启临时聊天（不保存聊天记录）</td>
   </tr>
    <tr align="left">
-    <td rowspan="3">系统变量</td>
+    <td rowspan="4">系统变量</td>
     <td><code>PROXY_URL_POOL</code></td>
     <td><code>String</code></td>
     <td><code>None</code></td>
@@ -83,6 +83,13 @@ dairoot/grok-gateway:latest
     <td><code>String</code></td>
     <td><code>None</code></td>
     <td>设置服务的域名地址，用于api 图片显示 <br><code>https://example.com</code></td>
+    </tr>
+     <tr align="left">
+    <td><code>GOOGLEADS</code></td>
+    <td><code>String</code></td>
+    <td><code>None</code></td>
+    <td>Google Adsense 广告代码 </code></td>
+  </tr>
   </tr>
   
 </table>
@@ -92,10 +99,10 @@ dairoot/grok-gateway:latest
 POST: /v1/chat/completions
 
 - 请求头:
-  
-| 字段 | 类型 | 默认值 | 必填 | 描述 |
-| --- | --- | --- |--- |--- |
-| `Authorization` | `string` | `None` | `是` | `Bearer ${ AUTHORIZATION }` 或 <br> `Bearer ${`[Sso Token](./docs/get-sso-token.jpg)`}` <br><br> 推荐使用环境变量中的 AUTHORIZATION，自动轮询token |
+
+| 字段            | 类型     | 默认值 | 必填 | 描述                                                                                                                                                |
+| --------------- | -------- | ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Authorization` | `string` | `None` | `是` | `Bearer ${ AUTHORIZATION }` 或 <br> `Bearer ${`[Sso Token](./docs/get-sso-token.jpg)`}` <br><br> 推荐使用环境变量中的 AUTHORIZATION，自动轮询 token |
 
 - 请求参数:
 
@@ -127,7 +134,6 @@ curl --location "${yourUrl}/v1/chat/completions" \
 ```
 
 更多 API 请点击查看：[高阶玩法](./docs/grok-gateway.md)
-
 
 ## 加入群聊
 
