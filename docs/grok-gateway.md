@@ -37,9 +37,17 @@ POST: /api/login
 
 | 参数名            | 类型    | 是否必须 | 描述                      |
 | ----------------- | ------- | -------- | ------------------------- |
-| user_name             | string  | 是       | 用户名                     |
+| user_name             | string  | 是       | 用户名 (用于隔离)                    |
 | email_md5             | string  | 是       | 邮箱md5（前提已经录入了token）                     |
 
+## 登录接口v2 （无需录入token）
+POST: /api/login-v2
+- 请求参数:
+
+| 参数名            | 类型    | 是否必须 | 描述                      |
+| ----------------- | ------- | -------- | ------------------------- |
+| user_name             | string  | 是       | 用户名 (用于隔离)                    |
+| sso_token             | string  | 是       | sso_token                     |
 
 ## 获取 Grok 列表
 PSOT: /api/get-grok-list
